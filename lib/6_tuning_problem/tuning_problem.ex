@@ -61,8 +61,7 @@ defmodule AOC2022.TuningProblem do
     |> String.trim()
     |> String.graphemes()
     |> Enum.chunk_every(marker_length, 1, :discard)
-    |> IO.inspect()
-    |> Enum.find_index(& &1 == Enum.uniq(&1))
-    |> then(& &1 + marker_length)
+    |> Enum.find_index(&(&1 == Enum.uniq(&1)))
+    |> then(&(&1 + marker_length))
   end
 end
