@@ -14,7 +14,6 @@ defmodule AOC2022.NoSpaceLeftTest do
   test "finds the smallest directory with size >= 3_000_000" do
     input = Input.read("no_space_left.txt")
 
-    assert 2_195_372 =
-             NoSpaceLeft.solve(input, NoSpaceLeft.free_space(needed_space: 30_000_000))
+    assert 2_195_372 = NoSpaceLeft.solve(input, NoSpaceLeft.free_space(needed_space: 30_000_000))
   end
 end
