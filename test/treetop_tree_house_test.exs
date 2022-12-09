@@ -13,6 +13,6 @@ defmodule AOC2022.TreetopTreeHouseTest do
   test "gets the tree with the max view" do
     input = Input.read("treetop_tree_house.txt")
 
-    assert 496125 == TreetopTreeHouse.solve(input, &TreetopTreeHouse.maximum_view/1)
+    assert 496_125 == TreetopTreeHouse.solve(input, &TreetopTreeHouse.maximum_view/1)
   end
 end

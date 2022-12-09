@@ -103,11 +103,12 @@ defmodule AOC2022.TreetopTreeHouse do
   end
 
   def maximum_view(field) do
-    acc = Enum.reduce(field, %{}, fn row, views ->
-      views
-      |> Map.merge(row_views(row), fn _k, a, b -> a * b end)
-      |> Map.merge(row_views(Enum.reverse(row)), fn _k, a, b -> a * b end)
-    end)
+    acc =
+      Enum.reduce(field, %{}, fn row, views ->
+        views
+        |> Map.merge(row_views(row), fn _k, a, b -> a * b end)
+        |> Map.merge(row_views(Enum.reverse(row)), fn _k, a, b -> a * b end)
+      end)
 
     field
     |> transpose()
@@ -172,7 +173,9 @@ defmodule AOC2022.TreetopTreeHouse do
 
   defp view_line(%Tree{height: height}, previous_trees) do
     Enum.reduce(previous_trees, {[], false}, fn
-      _, {acc, true = stop} -> {acc, stop}
+      _, {acc, true = stop} ->
+        {acc, stop}
+
       previous_tree, {acc, _stop} ->
         {[previous_tree | acc], previous_tree >= height}
     end)
