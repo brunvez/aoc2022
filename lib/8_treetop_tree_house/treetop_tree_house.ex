@@ -165,7 +165,6 @@ defmodule AOC2022.TreetopTreeHouse do
       %Tree{height: height} = tree, {views, previous_trees} ->
         view_line = view_line(tree, previous_trees)
         view = Enum.count(view_line)
-        # IO.inspect({tree, view_line, previous_trees, view})
         {Map.update(views, tree, view, &(&1 * view)), [height | previous_trees]}
     end)
     |> elem(0)

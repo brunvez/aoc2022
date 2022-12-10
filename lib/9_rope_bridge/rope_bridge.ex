@@ -729,9 +729,6 @@ defmodule AOC2022.RopeBridge do
           end
       end)
 
-    # IO.puts("#{dir} #{n}")
-    # print(Enum.reverse(new_positions))
-
     move({dir, n - 1}, Enum.reverse(new_positions), MapSet.put(tail_moves, new_tail))
   end
 
@@ -757,15 +754,5 @@ defmodule AOC2022.RopeBridge do
 
   defp touching?({x1, y1}, {x2, y2}) do
     abs(x1 - x2) <= 1 && abs(y1 - y2) <= 1
-  end
-
-  defp print(knots) do
-    Enum.each(-40..40, fn y ->
-      Enum.map(-40..40, fn x ->
-        Enum.find_index(knots, &(&1 == {x, y})) || "."
-      end)
-      |> Enum.join("")
-      |> IO.puts()
-    end)
   end
 end
