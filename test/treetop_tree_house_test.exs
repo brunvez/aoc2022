@@ -1,5 +1,5 @@
 defmodule AOC2022.TreetopTreeHouseTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias AOC2022.Input
   alias AOC2022.TreetopTreeHouse

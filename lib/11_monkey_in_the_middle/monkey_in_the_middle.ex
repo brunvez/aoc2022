@@ -445,7 +445,7 @@ defmodule AOC2022.MonkeyInTheMiddle do
   defp set_max_number(monkeys) do
     max_number = monkeys |> Enum.map(& &1.divisor) |> Enum.product()
 
-    Enum.map(monkeys, & %{&1 | max_number: max_number})
+    Enum.map(monkeys, &%{&1 | max_number: max_number})
   end
 
   defp operation_to_fn("old * old"), do: fn a -> a * a end

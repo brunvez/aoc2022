@@ -1,5 +1,5 @@
 defmodule AOC2022.SupplyStacksTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias AOC2022.Input
   alias AOC2022.SupplyStacks

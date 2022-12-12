@@ -1,5 +1,5 @@
 defmodule AOC2022.RockPaperScissorsTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   alias AOC2022.Input
   alias AOC2022.RockPaperScissors
